@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .linia1,
+        .linia2 {
+            height: 5px;
+            width: 250px;
+            background-color: black;
+        }
+        .linia2 {
+            margin-top: -5px;
+        }
+        .root2 {
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+
+        .topInput {
+            max-width: 100px;
+        }
+
+        button {
+            margin: 20px;
+        }
+
+        .ygolShina1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .verhGuba,
+        .nizGuba {
+            background-color: blueviolet;
+        }
+
+        .shinaVerh {
+            background-color: yellow;
+        }
+
+        .verhGuba,
+        .nizGuba,
+        .shinaVerh {
+            height: 20px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contGub2 {
+            display: flex;
+        }
+
+        .levGuba,
+        .shinaBok,
+        .pravGuba {
+            height: 100px;
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .levGuba,
+        .pravGuba {
+            background-color: blueviolet;
+        }
+
+        .shinaBok {
+            background-color: yellow;
+        }
+
+        .levGuba {
+            margin-left: 100px;
+        }
+
+        .contActiv {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .goriz_Sin,
+        .goriz_Sin_s{
+            width: 100px;
+            height: 20px;
+
+        }
+        .vertikal_Sin,
+        .vertikal_Sin_s {
+            width: 20px;
+            height: 100px;
+        }
+
+        .goriz_Sin,
+        .vertikal_Sin {
+            background-color: blueviolet;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+        }
+
+        .goriz_Sin_s,
+        .vertikal_Sin_s {
+            background-color: yellow;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+        }
+
+        .con4sini1 {
+            display: flex;
+        }
+
+        .con4sini1_1{
+            margin-top: 100px;
+            
+        }
+
+        .con4sini2 {
+            margin-left: 150px;
+        }
+
+        .con4sini2_1 {
+            margin-left: 60px;
+        }
+
+        .con4sini1_2{
+            display: flex;
+        }
+
+        .con4sini2_2 {
+            display: flex;
+        }
+
+        .center_Sin {
+            display: flex;
+            justify-content: center;
+        }
+
+        .center_Sin_1 {
+            width: 20px;
+            height: 100px;
+            background-color: yellow;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+        }
+
+        .center_Sin_2 {
+            height: 20px;
+            width: 100px;
+            background-color: yellow;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            margin-top: 80px;
+        }
+
+        .vosemGubok {
+            margin-bottom: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>блок 1</h3>
+    <div class="root">
+        <div>высота</div>
+        <input class="wisota" type="number">
+        <div>длинна</div>
+        <input class="dlina" type="number">
+        <button class="knopka">пощитать</button>
+        <div class="otvet">ответ</div>
+        <div class="diagonal">диагональ</div>
+    </div>
+    <hr>
+    <h3>блок 2</h3>
+    <div style="height: 40px;"></div>
+    <div>
+        <input class="vv2 topInput" type="number"><span>угол</span><br>
+        <input class="tolst topInput" type="number" value="10"><span>толщина шины</span><br>
+        <input class="radd topInput" type="number" value="10"><span>радиус</span>
+    </div>
+    <div style="display: flex; justify-content: center;">
+       <button class="bb2">показать угол</button>
+    </div>
+    <div class="ydin"></div>
+
+    <div class="root2" >
+        <div class="linia1"></div>
+        <div class="linia2" style="transform: rotate(10deg);"></div>
+        
+    </div>
+
+    <hr>
+    <h3>блок 3</h3>
+    <div>
+        
+        <div class="kyskiDlini" style="gap: 10px;">
+            <input class="chytDlinni" type="number" value="0"><span style="margin-left: 20px;">0</span>
+        </div>
+        <div style="display: flex; justify-content: center;">
+        <button class="butDlinna">прощитать длинну/+1</button>
+        </div>
+    </div>
+    <div style="height: 20px;;"></div>
+    <hr>
+    <h3>блок 4</h3>
+
+    <div class="ygolShina1">
+        
+    <div class="conYgolSina">
+        <div class="contGub1">
+            <div class="verhGuba">
+                <input class="checkboxQ" type="checkbox">
+            </div>
+            <div class="shinaVerh">1</div>
+            <div class="nizGuba">
+                <input class="checkboxQ" type="checkbox">
+            </div>
+        </div>
+    
+        <div class="contGub2">
+            <div class="levGuba">
+                <input class="checkboxQ" type="checkbox"></div>
+            <div class="shinaBok">2</div>
+            <div class="pravGuba">
+                <input class="checkboxQ" type="checkbox">
+            </div>
+        </div>
+        <div class="contActiv">
+            <span>длинна 1</span>
+            <input class="dlinaSini1" type="number" value="100">
+            <span>длинна 2</span>
+            <input class="dlinaSini2" type="number" value="100">
+            <span>толщина шины</span>
+            <input class="tolstonaSini" type="number" value="10">
+            <span>каректировка радиуса</span>
+            <input class="kybUgol" type="number" value="10">
+            <button class="pochitKvadrat">пощитать</button>
+            <div class="itogKvadrat">будущий итог</div>
+        </div>
+    </div>
+
+    </div>
+    <hr>
+    <h3>блок 5</h3>
+
+    <!--не прямой угол с губками-->
+    
+    <div class="vosemGubok">
+        <div class="contVosemGub">
+            <div class="con4sini1">
+                <div class="con4sini1_1">
+                    <div class="goriz_Sin">
+                        <input class="checkboxW" type="checkbox" checked>
+                    </div>
+                    <div class="goriz_Sin_s">1</div>
+                    <div class="goriz_Sin">
+                        <input class="checkboxW" type="checkbox">
+                    </div>
+                </div>
+                <div class="con4sini1_2">
+                    <div class="vertikal_Sin">
+                        <input class="checkboxW" type="checkbox">
+                    </div>
+                    <div class="vertikal_Sin_s">1</div>
+                    <div class="vertikal_Sin">
+                        <input class="checkboxW" type="checkbox">
+                    </div>
+                </div>
+            </div>
+            <div class="coontVos_senter">
+                    <div class="center_Sin">
+                        <div class="center_Sin_1">3</div>
+                        <div class="center_Sin_2">4</div>
+                    </div>
+            </div>
+            <div class="con4sini2">
+                <div class="con4sini2_1">
+                    <div class="goriz_Sin">
+                        <input class="checkboxW" type="checkbox">
+                    </div>
+                    <div class="goriz_Sin_s">2</div>
+                    <div class="goriz_Sin">
+                        <input class="checkboxW" type="checkbox">
+                    </div>
+                </div>
+                <div class="con4sini2_2">
+                    <div class="vertikal_Sin">
+                        <input class="checkboxW" type="checkbox" checked>
+                    </div>
+                    <div class="vertikal_Sin_s">2</div>
+                    <div class="vertikal_Sin">
+                        <input class="checkboxW" type="checkbox">
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <span>толщина шини</span><br>
+                <input class="ygolSiniYklonTolst" type="number" value="10"><br>
+                <span>коректировка радиуса</span><br>
+                <input class="ygolSiniYklonYgol" type="number" value="10"><br>
+                <span>динна шины 1</span><br>
+                <input class="ygolSiniYklondlin_1" type="number" value="100"><br>
+                <span>динна шины 2</span><br>
+                <input class="ygolSiniYklondlin_2" type="number" value="100"><br>
+                <span>динна шины 3</span><br>
+                <input class="ygolSiniYklondlin_3" type="number" value="100"><br>
+                <span>динна шины 4</span><br>
+                <input class="ygolSiniYklondlin_4" type="number" value="100"><br>
+                <button class="butYgol_yklon">пощитать</button>
+                <div class="itogYgolYklon">итог будит тут</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<script>
+    let visota = document.querySelector(".wisota");
+    let dina = document.querySelector(".dlina");
+    let knopka = document.querySelector(".knopka");
+    let otvet = document.querySelector(".otvet");
+    let diagonal = document.querySelector(".diagonal");
+    let root2 = document.querySelector(".root2");
+    let vv2 = document.querySelector(".vv2");
+    let bb2 = document.querySelector(".bb2");
+    let ydin = document.querySelector(".ydin");
+    let radd = document.querySelector(".radd");
+    let tolst = document.querySelector(".tolst");
+    let butDlinna = document.querySelector(".butDlinna");
+    let kyskiDlini = document.querySelector(".kyskiDlini");
+
+    knopka.addEventListener("click", function () {
+        let ygol =(Math.atan(visota.value/dina.value))*180/3.14;
+        otvet.innerHTML =ygol + "  -угол";
+        diagonal.innerHTML =visota.value/ Math.sin(ygol/180*3.14) + "  -длинна";
+    });
+
+    bb2.addEventListener('click', function(){
+        root2.innerHTML=`
+          <div class="linia1"></div>
+          <div class="linia2" style="transform: rotate(${vv2.value}deg);"></div>
+        
+        `;
+        let glavRad = radd.value/1+tolst.value/2;
+        ydin.innerHTML =(glavRad*2/(90/vv2.value) - vv2.value*(glavRad*3.14/180))/2 + "  -удлиннение";
+    });
+
+    butDlinna.addEventListener('click',function() {
+        let rabMass = [];
+        let masInput = document.querySelectorAll(".chytDlinni");
+        if (masInput.length == 1){
+            kyskiDlini.innerHTML= `
+            <input class="chytDlinni" value = '${masInput[0].value}' type="number">
+            <span style="margin-left: 20px;">${masInput[0].value}</span>
+            <input class="chytDlinni" type="number" value="0">
+            <span style="margin-left: 20px;">0</span>
+                
+            `;
+        };
+        if (masInput.length>1){
+            let vremText = "";
+            for (let q = 0; q < masInput.length; q++) {
+                
+                if(q==0){
+                rabMass.push(Math.round(Number(masInput[q].value)*100)/100);
+                vremText = vremText +`
+                <input class="chytDlinni" value = '${masInput[q].value}' type="number">
+                <span style="margin-left: 20px;">${Math.round(masInput[q].value*100)/100}</span>
+                `;
+                };
+                if(q>0){
+                rabMass.push(Math.round(((Number(masInput[q].value))+rabMass[q-1])*100)/100);
+                vremText = vremText + `
+                <input class="chytDlinni" value = '${masInput[q].value}' type="number">
+                <span style="margin-left: 20px;">${rabMass[q]}</span>
+                `;
+                };
+                
+            };
+            kyskiDlini.innerHTML = vremText +`
+            <input class="chytDlinni" type="number" value="0">
+            <span style="margin-left: 20px;">0</span>
+            `;
+        };
+    });
+    //кубик
+
+    
+    let pochitKvadrat = document.querySelector('.pochitKvadrat');
+    let itogKvadrat = document.querySelector('.itogKvadrat');
+
+    pochitKvadrat.addEventListener('click', function(){
+        let checkboxQ = document.querySelectorAll('.checkboxQ');
+        let dlinaSini1 = document.querySelector('.dlinaSini1');
+        let dlinaSini2 = document.querySelector('.dlinaSini2');
+        let tolstonaSini =document.querySelector('.tolstonaSini');
+        let kybUgol = document.querySelector('.kybUgol');
+
+        let dlinaSini1uV = Number(dlinaSini1.value);
+        let dlinaSini2uV = Number(dlinaSini2.value);
+        let tolstonaSiniuV =Number(tolstonaSini.value);
+        let kubUgoluV = Number(kybUgol.value);
+        let kubUgolUbeg =((kubUgoluV + tolstonaSiniuV/2)*2 - ((kubUgoluV + tolstonaSiniuV/2)*3.14/2))/2;
+        if(checkboxQ[0].checked == true){
+            dlinaSini2uV = dlinaSini2uV - kubUgolUbeg - tolstonaSiniuV/2;
+        };
+        if(checkboxQ[1].checked == true){
+            dlinaSini2uV = dlinaSini2uV - kubUgolUbeg + tolstonaSiniuV/2;
+        };
+        if(checkboxQ[2].checked == true){
+            dlinaSini1uV = dlinaSini1uV - kubUgolUbeg + tolstonaSiniuV/2;
+        };
+        if(checkboxQ[3].checked == true){
+            dlinaSini1uV = dlinaSini1uV -kubUgolUbeg - tolstonaSiniuV/2;
+        };
+
+        itogKvadrat.innerHTML = `
+        длинна до угла: ${Math.floor((dlinaSini1uV)*100)/100}<br>
+        длинна после угла: ${Math.floor((dlinaSini2uV)*100)/100}<br>
+        общяя длинна: ${Math.floor((dlinaSini1uV + dlinaSini2uV)*100)/100}
+        
+        `;
+    });
+
+    //Пробник наклонного угла
+
+    let butYgol_yklon = document.querySelector('.butYgol_yklon');
+    let itogYgolYklon = document.querySelector('.itogYgolYklon');
+
+    butYgol_yklon.addEventListener('click', function(){
+        let checkboxW = document.querySelectorAll('.checkboxW');
+        let ygolSiniYklonTolst = (Number(document.querySelector('.ygolSiniYklonTolst').value))/2;
+        let ygolSiniYklonYgol = Number(document.querySelector('.ygolSiniYklonYgol').value);
+        let ygolSiniYklondlin_1 = Number(document.querySelector('.ygolSiniYklondlin_1').value);
+        let ygolSiniYklondlin_2 = Number(document.querySelector('.ygolSiniYklondlin_2').value);
+        let ygolSiniYklondlin_3 = Number(document.querySelector('.ygolSiniYklondlin_3').value);
+        let ygolSiniYklondlin_4 = Number(document.querySelector('.ygolSiniYklondlin_4').value);
+        let deistvitelniiRadiys = ygolSiniYklonTolst + ygolSiniYklonYgol;
+        let ygolSini_1 = 0;
+        let ygolSini_2 = 0;
+        let diagonalSini =0;
+        let udlinnenie_ygol_1 = 0;
+        let udlinnenie_ygol_2 = 0;
+        let ygolSina_textNachalo = '';
+        let ygolSina_textKonets = '';
+
+        for (let iY = 0; iY < checkboxW.length; iY++) {
+            if(checkboxW[iY].checked == true && iY == 0 || checkboxW[iY].checked == true && iY == 5){
+                ygolSiniYklondlin_3 = ygolSiniYklondlin_3 - ygolSiniYklonTolst;
+            };
+            if(checkboxW[iY].checked == true && iY == 1 || checkboxW[iY].checked == true && iY == 4){
+                ygolSiniYklondlin_3 = ygolSiniYklondlin_3 + ygolSiniYklonTolst;
+            };
+            if(checkboxW[iY].checked == true && iY == 2 || checkboxW[iY].checked == true && iY == 7){
+                ygolSiniYklondlin_4 = ygolSiniYklondlin_4 - ygolSiniYklonTolst;
+            };
+            if(checkboxW[iY].checked == true && iY == 3 || checkboxW[iY].checked == true && iY == 6){
+                ygolSiniYklondlin_4 = ygolSiniYklondlin_4 + ygolSiniYklonTolst;
+            };         
+        };
+
+        for (let iU = 0; iU < checkboxW.length; iU++) {
+            if(checkboxW[iU].checked == true && iU == 2 || checkboxW[iU].checked == true && iU == 3 || checkboxW[iU].checked == true && iU == 6 || checkboxW[iU].checked == true && iU == 7){
+                ygolSini_1 = (Math.atan(ygolSiniYklondlin_4/ygolSiniYklondlin_3))*180/3.14;
+                diagonalSini = ygolSiniYklondlin_4/Math.sin(ygolSini_1/180*3.14);
+                udlinnenie_ygol_1 = (deistvitelniiRadiys*2/(90/ygolSini_1) - ygolSini_1*(deistvitelniiRadiys*3.14/180))/2
+            };
+            if(checkboxW[iU].checked == true && iU == 0 || checkboxW[iU].checked == true && iU == 1 || checkboxW[iU].checked == true && iU == 4 || checkboxW[iU].checked == true && iU == 5){
+                ygolSini_2 = (Math.atan(ygolSiniYklondlin_3/ygolSiniYklondlin_4))*180/3.14;
+                diagonalSini = ygolSiniYklondlin_3/Math.sin(ygolSini_2/180*3.14);
+                udlinnenie_ygol_2 = (deistvitelniiRadiys*2/(90/ygolSini_2) - ygolSini_2*(deistvitelniiRadiys*3.14/180))/2
+            };
+        };
+
+        let ygolMinysa =0;
+        if(udlinnenie_ygol_1 ==0){
+            ygolMinysa = udlinnenie_ygol_2;
+        }else{
+            ygolMinysa = udlinnenie_ygol_1;
+        }
+        let masMinus =[[0,0,1,1,2,2,3,3],[4,5,4,5,6,7,6,7]];
+        for(let iP = 0;iP<masMinus[0].length;iP++){
+            if(checkboxW[masMinus[0][iP]].checked == true && checkboxW[masMinus[1][iP]].checked == true){
+                ygolSiniYklondlin_1 = ygolSiniYklondlin_1 + ygolMinysa;
+                ygolSiniYklondlin_2 = ygolSiniYklondlin_2 + ygolMinysa;
+            }
+        };
+
+        for (let iO = 0; iO < checkboxW.length; iO++) {
+            if(checkboxW[iO].checked == true && iO == 2 || checkboxW[iO].checked == true && iO == 3){
+                ygolSiniYklondlin_1 = ygolSiniYklondlin_1 - udlinnenie_ygol_1;
+                diagonalSini = diagonalSini - udlinnenie_ygol_1;
+                ygolSina_textNachalo = 'отрезок 1 = ' + Math.floor(ygolSiniYklondlin_1*100)/100 + '<br> загиб, угол = ' +Math.floor( ygolSini_1*100)/100 + '°<br>отрезок 2 = ';
+            };
+            if(checkboxW[iO].checked == true && iO == 6 || checkboxW[iO].checked == true && iO == 7){
+                ygolSiniYklondlin_2 = ygolSiniYklondlin_2 - udlinnenie_ygol_1;
+                diagonalSini = diagonalSini - udlinnenie_ygol_1;
+                ygolSina_textKonets ='<br>загиб, угол = '+Math.floor(ygolSini_1*100)/100+'°<br>отрезок 3 = ' + Math.floor(ygolSiniYklondlin_2*100)/100;
+            };
+            if(checkboxW[iO].checked == true && iO == 0 || checkboxW[iO].checked == true && iO == 1){
+                ygolSiniYklondlin_1 = ygolSiniYklondlin_1 - udlinnenie_ygol_2;
+                diagonalSini = diagonalSini - udlinnenie_ygol_2;
+                ygolSina_textNachalo = 'отрезок 1 = ' + Math.floor(ygolSiniYklondlin_1*100)/100 + '<br> загиб, угол = ' + Math.floor(ygolSini_2*100)/100 + '°<br>отрезок 2 = ';
+            };
+            if(checkboxW[iO].checked == true && iO == 4 || checkboxW[iO].checked == true && iO == 5){
+                ygolSiniYklondlin_2 = ygolSiniYklondlin_2 - udlinnenie_ygol_2;
+                diagonalSini = diagonalSini - udlinnenie_ygol_2;
+                ygolSina_textKonets ='<br>загиб, угол = '+Math.floor(ygolSini_2*100)/100+'°<br>отрезок 3 = ' + Math.floor(ygolSiniYklondlin_2*100)/100;
+            };
+        };
+
+        itogYgolYklon.innerHTML = ygolSina_textNachalo + Math.floor(diagonalSini*100)/100 + ygolSina_textKonets+'<br><br>метка 1/метка 1+2/общяя:<br>'+Math.floor(ygolSiniYklondlin_1*100)/100+'/'+Math.floor((ygolSiniYklondlin_1+diagonalSini)*100)/100+'/'+Math.floor((ygolSiniYklondlin_1+diagonalSini+ygolSiniYklondlin_2)*100)/100;
+
+    });
+
+</script>
+</html>
