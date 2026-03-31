@@ -171,6 +171,28 @@
         .vosemGubok {
             margin-bottom: 150px;
         }
+         .bloc4v2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .b4v2sini1,
+        .b4v2sini3 {
+            display: flex;
+            gap: 30px;
+        }
+
+        .b4v2sini2{
+            display: flex;
+        }
+
+        .b4v2aktiv,
+        .b4v2itog {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
     </style>
 </head>
@@ -253,6 +275,63 @@
             <div class="itogKvadrat">будущий итог</div>
         </div>
     </div>
+
+    </div>
+    <hr>
+    <h3>блок 4в2</h3>
+
+    <!--прямой сложный угол-->
+    <div class="bloc4v2">
+        <div class="b4v2sini1">
+            <div class="b4v2sini1L">
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                <div class="goriz_Sin_s">1</div>
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+            </div>
+            <div class="b4v2sini1pusto">
+                <div></div>
+            </div>
+            <div class="b4v2sini1R">
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                <div class="goriz_Sin_s">1</div>
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+            </div>
+        </div>
+        <div class="b4v2sini2">
+            <div class="vertikal_Sin"><input type="checkbox" class="b4v2box"></div>
+            <div class="vertikal_Sin_s">2</div>
+            <div class="vertikal_Sin"><input type="checkbox" class="b4v2box"></div>
+        </div>
+        <div class="b4v2sini3">
+            <div class="b4v2sini3L">
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                <div class="goriz_Sin_s">3</div>
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div class="b4v2sini3R">
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                <div class="goriz_Sin_s">3</div>
+                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+            </div>
+        </div>
+        <div class="b4v2aktiv">
+            <span style="margin-top: 40px;">длинна 1</span>
+            <input type="number" value="0" class="b4v2aktivCont">
+            <span>длинна 2</span>
+            <input type="number" value="0" class="b4v2aktivCont">
+            <span>длинна 3</span>
+            <input type="number" value="0" class="b4v2aktivCont">
+            <span>толщина шины</span>
+            <input type="number" value="10" class="b4v2aktivCont">
+            <span>каректировка радиуса</span>
+            <input type="number" value="10" class="b4v2aktivCont">
+            <button class="b4v2but">пощитать</button>
+        </div>
+        <div class="b4v2itog" style="margin-top: 30px;">результат будит тут</div>
+        
 
     </div>
     <hr>
@@ -439,7 +518,62 @@
         `;
     });
 
-    //Пробник наклонного угла
+    //сложный прямой угол
+
+    let b4v2box = document.querySelectorAll(".b4v2box");
+    let b4v2aktivCont = document.querySelectorAll(".b4v2aktivCont");
+    let b4v2but = document.querySelector(".b4v2but");
+    let b4v2itog = document.querySelector(".b4v2itog");
+
+    b4v2but.addEventListener("click",function(){
+        let b4v2L1= Number(b4v2aktivCont[0].value);
+        let b4v2L2= Number(b4v2aktivCont[1].value);
+        let b4v2L3= Number(b4v2aktivCont[2].value);
+        let b4v2minyc = ((Number(b4v2aktivCont[4].value) + Number(b4v2aktivCont[3].value)/2)*2 - ((Number(b4v2aktivCont[4].value) + Number(b4v2aktivCont[3].value)/2)*3.14/2))/2;
+        for (let iP = 0; iP < b4v2box.length; iP++) {
+            if ((b4v2box[iP].checked==true && iP==0) || (b4v2box[iP].checked==true && iP==2) || (b4v2box[iP].checked==true && iP==7) || (b4v2box[iP].checked==true && iP==9)) {
+                b4v2L2 = b4v2L2 - (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[iP].checked==true && iP==1) || (b4v2box[iP].checked==true && iP==3) || (b4v2box[iP].checked==true && iP==6) || (b4v2box[iP].checked==true && iP==8)) {
+                b4v2L2 = b4v2L2 + (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 0) || (b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 1)) {
+                b4v2L1 = b4v2L1 + (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 6) || (b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 7)) {
+                b4v2L3 = b4v2L3 + (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 2) || (b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 3)) {
+                b4v2L1 = b4v2L1 - (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 8) || (b4v2box[4].checked == true && b4v2box[iP].checked == true && iP == 9)) {
+                b4v2L3 = b4v2L3 - (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 0) || (b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 1)) {
+                b4v2L1 = b4v2L1 - (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 6) || (b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 7)) {
+                b4v2L3 = b4v2L3 - (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 2) || (b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 3)) {
+                b4v2L1 = b4v2L1 + (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+            if ((b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 8) || (b4v2box[5].checked == true && b4v2box[iP].checked == true && iP == 9)) {
+                b4v2L3 = b4v2L3 + (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
+            }
+        }
+        b4v2itog.innerHTML = `
+        длинна 1: ${Math.floor((b4v2L1)*100)/100}<br>
+        длинна 2: ${Math.floor((b4v2L2)*100)/100}<br>
+        длинна 3: ${Math.floor((b4v2L3)*100)/100}<br>
+        отрезки/общяя длинна: ${Math.floor((b4v2L1)*100)/100}/${Math.floor((b4v2L1+b4v2L2)*100)/100}/${Math.floor((b4v2L1+b4v2L2+b4v2L3)*100)/100}<br>
+        
+        `;
+    });
+    
+    
+
+    //Наклонный угол
 
     let butYgol_yklon = document.querySelector('.butYgol_yklon');
     let itogYgolYklon = document.querySelector('.itogYgolYklon');
