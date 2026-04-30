@@ -231,7 +231,7 @@
     <div>
         
         <div class="kyskiDlini" style="gap: 10px;">
-            <input class="chytDlinni" type="number" value="0"><span style="margin-left: 20px;">0</span>
+            <input class="chytDlinni" type="number" value="0"><span style="margin-left: 20px;">0</span><br>
         </div>
         <div style="display: flex; justify-content: center;">
         <button class="butDlinna">прощитать длинну/+1</button>
@@ -319,11 +319,11 @@
         </div>
         <div class="b4v2aktiv">
             <span style="margin-top: 40px;">длинна 1</span>
-            <input type="number" value="0" class="b4v2aktivCont">
+            <input type="number" value="100" class="b4v2aktivCont">
             <span>длинна 2</span>
-            <input type="number" value="0" class="b4v2aktivCont">
+            <input type="number" value="100" class="b4v2aktivCont">
             <span>длинна 3</span>
-            <input type="number" value="0" class="b4v2aktivCont">
+            <input type="number" value="100" class="b4v2aktivCont">
             <span>толщина шины</span>
             <input type="number" value="10" class="b4v2aktivCont">
             <span>каректировка радиуса</span>
@@ -411,6 +411,7 @@
 
 </body>
 <script>
+    //СКРИПТ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     let visota = document.querySelector(".wisota");
     let dina = document.querySelector(".dlina");
     let knopka = document.querySelector(".knopka");
@@ -425,11 +426,14 @@
     let butDlinna = document.querySelector(".butDlinna");
     let kyskiDlini = document.querySelector(".kyskiDlini");
 
+    //блок1
+
     knopka.addEventListener("click", function () {
         let ygol =(Math.atan(visota.value/dina.value))*180/3.14;
         otvet.innerHTML =ygol + "  -угол";
         diagonal.innerHTML =visota.value/ Math.sin(ygol/180*3.14) + "  -длинна";
     });
+    //блок2
 
     bb2.addEventListener('click', function(){
         root2.innerHTML=`
@@ -437,9 +441,11 @@
           <div class="linia2" style="transform: rotate(${vv2.value}deg);"></div>
         
         `;
-        let glavRad = radd.value/1+tolst.value/2;
-        ydin.innerHTML =(glavRad*2/(90/vv2.value) - vv2.value*(glavRad*3.14/180))/2 + "  -удлиннение";
+        let glavRad = Number(radd.value)+Number(tolst.value)/2;
+        ydin.innerHTML =(glavRad*Math.tan(vv2.value/2*3.14/180)*2 - vv2.value*(glavRad*3.14/180))/2 + "  -удлиннение";
     });
+
+    //блок3
 
     butDlinna.addEventListener('click',function() {
         let rabMass = [];
@@ -447,9 +453,9 @@
         if (masInput.length == 1){
             kyskiDlini.innerHTML= `
             <input class="chytDlinni" value = '${masInput[0].value}' type="number">
-            <span style="margin-left: 20px;">${masInput[0].value}</span>
+            <span style="margin-left: 20px;">${masInput[0].value}</span><br>
             <input class="chytDlinni" type="number" value="0">
-            <span style="margin-left: 20px;">0</span>
+            <span style="margin-left: 20px;">0</span><br>
                 
             `;
         };
@@ -461,14 +467,14 @@
                 rabMass.push(Math.round(Number(masInput[q].value)*100)/100);
                 vremText = vremText +`
                 <input class="chytDlinni" value = '${masInput[q].value}' type="number">
-                <span style="margin-left: 20px;">${Math.round(masInput[q].value*100)/100}</span>
+                <span style="margin-left: 20px;">${Math.round(masInput[q].value*100)/100}</span><br>
                 `;
                 };
                 if(q>0){
                 rabMass.push(Math.round(((Number(masInput[q].value))+rabMass[q-1])*100)/100);
                 vremText = vremText + `
                 <input class="chytDlinni" value = '${masInput[q].value}' type="number">
-                <span style="margin-left: 20px;">${rabMass[q]}</span>
+                <span style="margin-left: 20px;">${rabMass[q]}</span><br>
                 `;
                 };
                 
@@ -479,7 +485,7 @@
             `;
         };
     });
-    //кубик
+    //кубик блок4
 
     
     let pochitKvadrat = document.querySelector('.pochitKvadrat');
@@ -518,7 +524,7 @@
         `;
     });
 
-    //сложный прямой угол
+    //сложный прямой угол блок4в2
 
     let b4v2box = document.querySelectorAll(".b4v2box");
     let b4v2aktivCont = document.querySelectorAll(".b4v2aktivCont");
@@ -529,7 +535,8 @@
         let b4v2L1= Number(b4v2aktivCont[0].value);
         let b4v2L2= Number(b4v2aktivCont[1].value);
         let b4v2L3= Number(b4v2aktivCont[2].value);
-        let b4v2minyc = ((Number(b4v2aktivCont[4].value) + Number(b4v2aktivCont[3].value)/2)*2 - ((Number(b4v2aktivCont[4].value) + Number(b4v2aktivCont[3].value)/2)*3.14/2))/2;
+        let b4v2L3glavRadius = Number(b4v2aktivCont[4].value) + Number(b4v2aktivCont[3].value)/2;
+        let b4v2minyc = (b4v2L3glavRadius*Math.tan(90/2*3.14/180)*2 - 90*(b4v2L3glavRadius*3.14/180))/2;
         for (let iP = 0; iP < b4v2box.length; iP++) {
             if ((b4v2box[iP].checked==true && iP==0) || (b4v2box[iP].checked==true && iP==2) || (b4v2box[iP].checked==true && iP==7) || (b4v2box[iP].checked==true && iP==9)) {
                 b4v2L2 = b4v2L2 - (Number(b4v2aktivCont[3].value)/2) - b4v2minyc;
@@ -573,7 +580,7 @@
     
     
 
-    //Наклонный угол
+    //Наклонный угол блок5
 
     let butYgol_yklon = document.querySelector('.butYgol_yklon');
     let itogYgolYklon = document.querySelector('.itogYgolYklon');
@@ -614,12 +621,12 @@
             if(checkboxW[iU].checked == true && iU == 2 || checkboxW[iU].checked == true && iU == 3 || checkboxW[iU].checked == true && iU == 6 || checkboxW[iU].checked == true && iU == 7){
                 ygolSini_1 = (Math.atan(ygolSiniYklondlin_4/ygolSiniYklondlin_3))*180/3.14;
                 diagonalSini = ygolSiniYklondlin_4/Math.sin(ygolSini_1/180*3.14);
-                udlinnenie_ygol_1 = (deistvitelniiRadiys*2/(90/ygolSini_1) - ygolSini_1*(deistvitelniiRadiys*3.14/180))/2
+                udlinnenie_ygol_1 = (deistvitelniiRadiys*Math.tan(ygolSini_1/2*3.14/180)*2 - ygolSini_1*(deistvitelniiRadiys*3.14/180))/2
             };
             if(checkboxW[iU].checked == true && iU == 0 || checkboxW[iU].checked == true && iU == 1 || checkboxW[iU].checked == true && iU == 4 || checkboxW[iU].checked == true && iU == 5){
                 ygolSini_2 = (Math.atan(ygolSiniYklondlin_3/ygolSiniYklondlin_4))*180/3.14;
                 diagonalSini = ygolSiniYklondlin_3/Math.sin(ygolSini_2/180*3.14);
-                udlinnenie_ygol_2 = (deistvitelniiRadiys*2/(90/ygolSini_2) - ygolSini_2*(deistvitelniiRadiys*3.14/180))/2
+                udlinnenie_ygol_2 = (deistvitelniiRadiys*Math.tan(ygolSini_2/2*3.14/180)*2 - ygolSini_2*(deistvitelniiRadiys*3.14/180))/2
             };
         };
 
@@ -629,19 +636,12 @@
         }else{
             ygolMinysa = udlinnenie_ygol_1;
         }
-        let masMinus =[[0,0,1,1,2,2,3,3],[4,5,4,5,6,7,6,7]];
-        for(let iP = 0;iP<masMinus[0].length;iP++){
-            if(checkboxW[masMinus[0][iP]].checked == true && checkboxW[masMinus[1][iP]].checked == true){
-                ygolSiniYklondlin_1 = ygolSiniYklondlin_1 + ygolMinysa;
-                ygolSiniYklondlin_2 = ygolSiniYklondlin_2 + ygolMinysa;
-            }
-        };
 
         for (let iO = 0; iO < checkboxW.length; iO++) {
             if(checkboxW[iO].checked == true && iO == 2 || checkboxW[iO].checked == true && iO == 3){
                 ygolSiniYklondlin_1 = ygolSiniYklondlin_1 - udlinnenie_ygol_1;
                 diagonalSini = diagonalSini - udlinnenie_ygol_1;
-                ygolSina_textNachalo = 'отрезок 1 = ' + Math.floor(ygolSiniYklondlin_1*100)/100 + '<br> загиб, угол = ' +Math.floor( ygolSini_1*100)/100 + '°<br>отрезок 2 = ';
+                ygolSina_textNachalo = 'отрезок 1 = ' + Math.floor(ygolSiniYklondlin_1*100)/100 + '<br> загиб, угол = ' +Math.floor(ygolSini_1*100)/100 + '°<br>отрезок 2 = ';
             };
             if(checkboxW[iO].checked == true && iO == 6 || checkboxW[iO].checked == true && iO == 7){
                 ygolSiniYklondlin_2 = ygolSiniYklondlin_2 - udlinnenie_ygol_1;
