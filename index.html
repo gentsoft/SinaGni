@@ -169,9 +169,10 @@
         }
 
         .vosemGubok {
-            margin-bottom: 150px;
+            margin-bottom: 20px;
         }
-         .bloc4v2 {
+         .bloc4v2,
+         .bloc4v2_in {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -188,10 +189,55 @@
         }
 
         .b4v2aktiv,
-        .b4v2itog {
+        .b4v2itog,
+        .summa_conteiner_6,
+        .summa_conteiner_itog_6 {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .but_otobrazit,
+        .but_povernyt {
+            width: 40px;
+            height: 40px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            border: solid 3px teal;
+            margin-left: 90%;
+        }
+
+        .but_povernyt {
+            margin-top: 20px;
+        }
+
+        .summa_control_6,
+        .summa_control_6_input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summa_control_6 button {
+            margin: 0;
+        }
+
+        .summa_control_6 {
+            margin-bottom: 100px;
+        }
+
+        .summa_conteiner_6_main {
+            display: flex;
+            gap: 10px;
+        }
+
+        .zerkalo {
+            transform: scaleX(-1);
+        }
+
+        .povorot_90 {
+            transform: rotate(90deg);
         }
 
     </style>
@@ -282,43 +328,46 @@
 
     <!--прямой сложный угол-->
     <div class="bloc4v2">
-        <div class="b4v2sini1">
-            <div class="b4v2sini1L">
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
-                <div class="goriz_Sin_s">1</div>
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+        <div class="bloc4v2_in">
+            <div class="b4v2sini1">
+                <div class="b4v2sini1L">
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                    <div class="goriz_Sin_s">1</div>
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                </div>
+                <div class="b4v2sini1pusto">
+                    <div></div>
+                </div>
+                <div class="b4v2sini1R">
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                    <div class="goriz_Sin_s">1</div>
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                </div>
             </div>
-            <div class="b4v2sini1pusto">
-                <div></div>
+            <div class="b4v2sini2">
+                <div class="vertikal_Sin"><input type="checkbox" class="b4v2box"></div>
+                <div class="vertikal_Sin_s">2</div>
+                <div class="vertikal_Sin"><input type="checkbox" class="b4v2box"></div>
             </div>
-            <div class="b4v2sini1R">
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
-                <div class="goriz_Sin_s">1</div>
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+            <div class="b4v2sini3">
+                <div class="b4v2sini3L">
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                    <div class="goriz_Sin_s">3</div>
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div class="b4v2sini3R">
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                    <div class="goriz_Sin_s">3</div>
+                    <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
+                </div>
             </div>
         </div>
-        <div class="b4v2sini2">
-            <div class="vertikal_Sin"><input type="checkbox" class="b4v2box"></div>
-            <div class="vertikal_Sin_s">2</div>
-            <div class="vertikal_Sin"><input type="checkbox" class="b4v2box"></div>
-        </div>
-        <div class="b4v2sini3">
-            <div class="b4v2sini3L">
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
-                <div class="goriz_Sin_s">3</div>
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-            <div class="b4v2sini3R">
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
-                <div class="goriz_Sin_s">3</div>
-                <div class="goriz_Sin"><input type="checkbox" class="b4v2box"></div>
-            </div>
-        </div>
+        <div class="but_povernyt"></div>
         <div class="b4v2aktiv">
-            <span style="margin-top: 40px;">длинна 1</span>
+            <span style="margin-top: 10px;">длинна 1</span>
             <input type="number" value="100" class="b4v2aktivCont">
             <span>длинна 2</span>
             <input type="number" value="100" class="b4v2aktivCont">
@@ -341,53 +390,56 @@
     
     <div class="vosemGubok">
         <div class="contVosemGub">
-            <div class="con4sini1">
-                <div class="con4sini1_1">
-                    <div class="goriz_Sin">
-                        <input class="checkboxW" type="checkbox" checked>
+            <div class="contVosemGub_v2">
+                <div class="con4sini1">
+                    <div class="con4sini1_1">
+                        <div class="goriz_Sin">
+                            <input class="checkboxW" type="checkbox" checked>
+                        </div>
+                        <div class="goriz_Sin_s">1</div>
+                        <div class="goriz_Sin">
+                            <input class="checkboxW" type="checkbox">
+                        </div>
                     </div>
-                    <div class="goriz_Sin_s">1</div>
-                    <div class="goriz_Sin">
-                        <input class="checkboxW" type="checkbox">
+                    <div class="con4sini1_2">
+                        <div class="vertikal_Sin">
+                            <input class="checkboxW" type="checkbox">
+                        </div>
+                        <div class="vertikal_Sin_s">1</div>
+                        <div class="vertikal_Sin">
+                            <input class="checkboxW" type="checkbox">
+                        </div>
                     </div>
                 </div>
-                <div class="con4sini1_2">
-                    <div class="vertikal_Sin">
-                        <input class="checkboxW" type="checkbox">
+                <div class="coontVos_senter">
+                        <div class="center_Sin">
+                            <div class="center_Sin_1">3</div>
+                            <div class="center_Sin_2">4</div>
+                        </div>
+                </div>
+                <div class="con4sini2">
+                    <div class="con4sini2_1">
+                        <div class="goriz_Sin">
+                            <input class="checkboxW" type="checkbox">
+                        </div>
+                        <div class="goriz_Sin_s">2</div>
+                        <div class="goriz_Sin">
+                            <input class="checkboxW" type="checkbox">
+                        </div>
                     </div>
-                    <div class="vertikal_Sin_s">1</div>
-                    <div class="vertikal_Sin">
-                        <input class="checkboxW" type="checkbox">
+                    <div class="con4sini2_2">
+                        <div class="vertikal_Sin">
+                            <input class="checkboxW" type="checkbox" checked>
+                        </div>
+                        <div class="vertikal_Sin_s">2</div>
+                        <div class="vertikal_Sin">
+                            <input class="checkboxW" type="checkbox">
+                        </div>
                     </div>
+                    
                 </div>
             </div>
-            <div class="coontVos_senter">
-                    <div class="center_Sin">
-                        <div class="center_Sin_1">3</div>
-                        <div class="center_Sin_2">4</div>
-                    </div>
-            </div>
-            <div class="con4sini2">
-                <div class="con4sini2_1">
-                    <div class="goriz_Sin">
-                        <input class="checkboxW" type="checkbox">
-                    </div>
-                    <div class="goriz_Sin_s">2</div>
-                    <div class="goriz_Sin">
-                        <input class="checkboxW" type="checkbox">
-                    </div>
-                </div>
-                <div class="con4sini2_2">
-                    <div class="vertikal_Sin">
-                        <input class="checkboxW" type="checkbox" checked>
-                    </div>
-                    <div class="vertikal_Sin_s">2</div>
-                    <div class="vertikal_Sin">
-                        <input class="checkboxW" type="checkbox">
-                    </div>
-                </div>
-                
-            </div>
+            <div class="but_otobrazit"></div>
             <div>
                 <span>толщина шини</span><br>
                 <input class="ygolSiniYklonTolst" type="number" value="10"><br>
@@ -408,6 +460,32 @@
         </div>
 
     </div>
+     <!--щиталка от броков 4в2 и5-->
+    <h3>блок 6</h3>
+
+    <h5 style="margin-top: 0;">сложение блоков 4в2 и 5</h5>
+    <div class="slojenie">
+        <div class="summa_conteiner_6_main">
+            <div class="summa_conteiner_6">
+                <div></div>
+
+            </div>
+            <div class="summa_conteiner_itog_6">
+                <div></div>
+
+            </div>
+        </div>
+        <div class="summa_control_6">
+            <button class="button_itog_6_1">добавить из 4в2</button>
+            <button class="button_itog_6_2">добавить из 5</button>
+            <button class="button_itog_6_3">перевернуть порядок последних</button>
+            <div class="summa_control_6_input">
+                <input class="summa_Dobavit" type="number" value="0">
+                <button class="button_itog_6_4">добавить проcто длинну</button>
+            </div>
+            <button class="button_itog_6_5">пощитать</button>
+        </div>
+    </div>
 
 </body>
 <script>
@@ -425,6 +503,8 @@
     let tolst = document.querySelector(".tolst");
     let butDlinna = document.querySelector(".butDlinna");
     let kyskiDlini = document.querySelector(".kyskiDlini");
+    let slojenie_mas_4v2 = [0,0,0];
+    let slojenie_mas_5 = [0,0,0];
 
     //блок1
 
@@ -531,6 +611,13 @@
     let b4v2but = document.querySelector(".b4v2but");
     let b4v2itog = document.querySelector(".b4v2itog");
 
+    let but_povernyt = document.querySelector(".but_povernyt");
+    let bloc4v2_in = document.querySelector(".bloc4v2_in");
+
+    but_povernyt.addEventListener("click", function () {
+        bloc4v2_in.classList.toggle('povorot_90');
+    });
+
     b4v2but.addEventListener("click",function(){
         let b4v2L1= Number(b4v2aktivCont[0].value);
         let b4v2L2= Number(b4v2aktivCont[1].value);
@@ -576,6 +663,9 @@
         отрезки/общяя длинна: ${Math.floor((b4v2L1)*100)/100}/${Math.floor((b4v2L1+b4v2L2)*100)/100}/${Math.floor((b4v2L1+b4v2L2+b4v2L3)*100)/100}<br>
         
         `;
+        slojenie_mas_4v2[0]=Math.floor((b4v2L1)*100)/100;
+        slojenie_mas_4v2[1]=Math.floor((b4v2L2)*100)/100;
+        slojenie_mas_4v2[2]=Math.floor((b4v2L3)*100)/100;
     });
     
     
@@ -584,6 +674,13 @@
 
     let butYgol_yklon = document.querySelector('.butYgol_yklon');
     let itogYgolYklon = document.querySelector('.itogYgolYklon');
+
+    let but_otobrazit = document.querySelector(".but_otobrazit");
+    let contVosemGub_v2 = document.querySelector(".contVosemGub_v2");
+
+    but_otobrazit.addEventListener("click", function () {
+        contVosemGub_v2.classList.toggle('zerkalo');
+    });
 
     butYgol_yklon.addEventListener('click', function(){
         let checkboxW = document.querySelectorAll('.checkboxW');
@@ -662,7 +759,94 @@
 
         itogYgolYklon.innerHTML = ygolSina_textNachalo + Math.floor(diagonalSini*100)/100 + ygolSina_textKonets+'<br><br>метка 1/метка 1+2/общяя:<br>'+Math.floor(ygolSiniYklondlin_1*100)/100+'/'+Math.floor((ygolSiniYklondlin_1+diagonalSini)*100)/100+'/'+Math.floor((ygolSiniYklondlin_1+diagonalSini+ygolSiniYklondlin_2)*100)/100;
 
+        slojenie_mas_5[0] = Math.floor(ygolSiniYklondlin_1*100)/100;
+        slojenie_mas_5[1] = Math.floor(diagonalSini*100)/100;
+        slojenie_mas_5[2] = Math.floor(ygolSiniYklondlin_2*100)/100;
     });
 
+    //блок для суммы №6
+    let button_itog_6_1 = document.querySelector(".button_itog_6_1");
+    let button_itog_6_2 = document.querySelector(".button_itog_6_2");
+    let button_itog_6_3 = document.querySelector(".button_itog_6_3");
+    let button_itog_6_4 = document.querySelector(".button_itog_6_4");
+    let button_itog_6_5 = document.querySelector(".button_itog_6_5");
+    let summa_Dobavit = document.querySelector(".summa_Dobavit");
+    let summa_conteiner_6 = document.querySelector(".summa_conteiner_6");
+    let summa_conteiner_itog_6 = document.querySelector(".summa_conteiner_itog_6");
+    let masSummaAll = [];
+    let masSummaCorect = [];
+    let masSummaAllStupen = [];
+
+    function summa6(mas1) {
+        let text6_1 = '';
+        let text6_2 = '<div>начальные значения</div>';
+        for (let i = 0; i < mas1.length; i++) {
+            text6_1 = `<div>${mas1[i]}</div>`;
+            text6_2 = text6_2 + text6_1;
+        };
+        summa_conteiner_6.innerHTML = text6_2;
+    };
+
+        function summa6_2(mas1) {
+        let text6_1 = '';
+        let text6_2 = '<div>итог по длиннам</div>';
+        for (let i = 0; i < mas1.length; i++) {
+            text6_1 = `<div>${mas1[i]}</div>`;
+            text6_2 = text6_2 + text6_1;
+        };
+        summa_conteiner_itog_6.innerHTML = text6_2;
+    };
+
+
+    button_itog_6_1.addEventListener("click", function () {
+        masSummaCorect = [];
+        let iS = 0;
+        for (let iA = 0; iA < slojenie_mas_4v2.length; iA++) {            
+            if (slojenie_mas_4v2[iA] !== 0) {
+                masSummaAll[masSummaAll.length] = slojenie_mas_4v2[iA];
+                masSummaCorect[iS] = slojenie_mas_4v2[iA];
+                iS++;
+            };
+        };
+        summa6(masSummaAll);
+        console.log(slojenie_mas_4v2,masSummaAll,masSummaCorect);
+    });
+    button_itog_6_2.addEventListener("click", function () {
+        masSummaCorect = [];
+        let iS = 0;
+        for (let iA = 0; iA < slojenie_mas_5.length; iA++) {
+            if (slojenie_mas_4v2[iA] !== 0) {
+                masSummaAll[masSummaAll.length] = slojenie_mas_5[iA];
+                masSummaCorect[iS] = slojenie_mas_5[iA];
+                iS++;
+            };
+        };
+        summa6(masSummaAll);
+        console.log(slojenie_mas_5,masSummaAll,masSummaCorect);
+    });
+    button_itog_6_3.addEventListener("click", function () {
+        masSummaCorect.reverse();
+        for (let i = 0; i < masSummaCorect.length; i++) {
+            masSummaAll[masSummaAll.length-i-1] = masSummaCorect[masSummaCorect.length-i-1];
+        };
+        summa6(masSummaAll);
+        console.log(masSummaAll,masSummaCorect);
+    });
+    button_itog_6_4.addEventListener("click", function () {
+        masSummaAll[masSummaAll.length] = Number(summa_Dobavit.value);
+        masSummaCorect =[];
+        summa6(masSummaAll);
+        console.log(masSummaAll,masSummaCorect);
+    });
+    button_itog_6_5.addEventListener("click", function () {
+        if ( masSummaAll.length !== 0) {
+            masSummaAllStupen[0]= masSummaAll[0];
+            for (let i = 1; i < masSummaAll.length; i++) {
+                masSummaAllStupen[i] = Math.floor((masSummaAllStupen[i-1]+masSummaAll[i])*100)/100;            
+            };
+        };
+        summa6_2(masSummaAllStupen);
+        console.log(masSummaAll,masSummaAllStupen);
+    });
 </script>
 </html>
